@@ -4,6 +4,7 @@ import store from '../store';
 
 // These values are all hardcoded...for now!
 // Soon, we'll fetch them from the server!
+// FETCH THEM FROM THE SERVERRR
 const RANDOM_CHANNEL = '/channels/1';
 const GENERAL_CHANNEL = '/channels/2';
 const DOGS_CHANNEL = '/channels/3';
