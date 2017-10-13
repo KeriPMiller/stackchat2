@@ -1,19 +1,10 @@
-import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
+import React from 'react';
+import { NavLink, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-//import store from '../store';
 
-// These values are all hardcoded...for now!
-// Soon, we'll fetch them from the server!
-// FETCH THEM FROM THE SERVERRR
-// const RANDOM_CHANNEL = '/channels/1';
-// const GENERAL_CHANNEL = '/channels/2';
-// const DOGS_CHANNEL = '/channels/3';
-const LUNCH_CHANNEL = '/channels/4';
 
 export function ChannelList(props) {
 
-   // const { messages } = this.state;
 
   return (
     <ul>
@@ -46,6 +37,6 @@ const mapStateToProps = (state) => {
           messages: state.messages };
 };
 
-const ChannelListContainer = connect(mapStateToProps)(ChannelList);
+const ChannelListContainer = withRouter(connect(mapStateToProps)(ChannelList));
 
 export default ChannelListContainer;

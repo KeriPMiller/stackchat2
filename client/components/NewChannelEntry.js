@@ -6,23 +6,26 @@ import store, { postChannel, writeChannel } from '../store';
 const mapDispatchToProps = function (dispatch, ownProps) {
   return {
     handleChange: function(event){
-      const newChannel= event.target.value;
+      const newChannel = event.target.value;
       dispatch(writeChannel(newChannel));
     },
     handleSubmit: function (event){
       event.preventDefault();
-      const name= event.target.channelName.value;
-      dispatch(postChannel({name}));
+      const name = event.target.channelName.value;
+      dispatch(postChannel({name}, ownProps.history));
+      dispatch(writeChannel(''));
     }
   };
-}
+};
 
 // receives state as an argument
-const mapStateToProps = function (state) {
+const mapStateToProps = function (state, ownProps) {
   return {newChannelEntry: state.newChannelEntry};
-}
+};
 
 export function NewChannelEntry (props) {
+  //const newUrl = props.history.pathname;
+
   return (
     <form onSubmit={props.handleSubmit}>
       <div className="form-group">

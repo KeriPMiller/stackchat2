@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Route, Component } from 'react';
 import ChannelList from './ChannelList';
 
 export default class Sidebar extends Component {
