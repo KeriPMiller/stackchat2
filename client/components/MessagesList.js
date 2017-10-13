@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Message from './Message';
 import NewMessageEntry from './NewMessageEntry';
-import store from '../store';
+import store, { getCurrentChannel } from '../store';
 
 export default class Messages extends Component {
 
@@ -21,6 +21,7 @@ export default class Messages extends Component {
   render () {
 
     const channelId = Number(this.props.match.params.channelId); // because it's a string "1", not a number!
+    //store.dispatch(getCurrentChannel(channelId));
     const messages = this.state.messages;
     const filteredMessages = messages.filter(message => message.channelId === channelId);
 

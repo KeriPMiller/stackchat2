@@ -11,12 +11,14 @@ import messages from './messages';
 import channels from './channels';
 import newChannelEntry from './newChannelEntry';
 import newMessageEntry from './newMessageEntry';
+import currentChannel from './currentChannel';
 
 
 const reducer = combineReducers({
   name,
   messages,
   channels,
+  currentChannel,
   newChannelEntry,
   newMessageEntry
 });
@@ -36,3 +38,4 @@ export * from './messages';
 export * from './channels';
 export * from './newChannelEntry';
 export * from './newMessageEntry';
+export * from './currentChannel';
